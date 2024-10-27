@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Seminarios</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>Registro de Seminarios</h1>
+    <form action="{{ url_for('registrar') }}" method="POST">
+        <label for="fecha">Fecha:</label>
+        <input type="date" name="fecha" required><br>
+
+        <label for="nombre">Nombre:</label>
+        <input type="text" name="nombre" required><br>
+
+        <label for="apellido">Apellido:</label>
+        <input type="text" name="apellido" required><br>
+
+        <label for="turno">Turno:</label><br>
+        <input type="checkbox" name="turno" value="mañana"> Mañana<br>
+        <input type="checkbox" name="turno" value="tarde"> Tarde<br>
+        <input type="checkbox" name="turno" value="noche"> Noche<br>
+
+        <label for="seminarios">Seminarios Disponibles:</label><br>
+        <input type="checkbox" name="seminarios" value="Inteligencia Artificial"> Inteligencia Artificial<br>
+        <input type="checkbox" name="seminarios" value="Machine learning"> Machine learning<br>
+        <input type="checkbox" name="seminarios" value="Simulacion con arena"> Simulación con Arena<br>
+        <input type="checkbox" name="seminarios" value="Robotica educativa"> Robótica Educativa<br>
+
+        <button type="submit">Enviar Registro</button>
+    </form>
+    <hr>
+    <a href="{{ url_for('inscritos') }}">Ver Lista de Inscritos</a>
+</body>
+</html>
